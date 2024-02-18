@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block content %}
+
+    <div class="row align-items-md-stretch">
+        <div class="col-12">
+            <div
+                class="h-100 p-5 text-white bg-primary border rounded-3"
+            >
+                <h2>Bienvenido a la administración del sistema</h2>
+                <p>
+                    Gestiona tus paquetes, transportistas y clientes de forma
+                </p>
+                <button
+                    class="btn btn-secondary"
+                    type="button"
+                    herf="{% url 'create_shipment' %}"
+                >
+                    Empezar
+                </button>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %} 

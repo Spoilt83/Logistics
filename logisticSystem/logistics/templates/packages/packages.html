@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %} Manejo de Paquetes  {% endblock %}
+
+{% block content %}
+    <!-- Hover added -->
+    <div class="card">
+        <div class="card-header">Listar paquetes</div>
+        <div class="card-body">
+            <h4 class="card-title">Paquetes</h4>
+            <div
+                class="table-responsive"
+            >
+                <table
+                    class="table table-primary table-bordered table-hover "
+                >
+                    <thead>
+                        <tr>
+                            <th scope="col">Peso</th>
+                            <th scope="col">Dimensiones</th>
+                            <th scope="col">Dirección de Origen</th>
+                            <th scope="col">Dirección de Destino</th>
+                            <th scope="col">Estado de Entrega</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Transportista</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <td scope="row">1.5 gr</td>
+                            <td>10cm x 5cm x 8cm </td>
+                            <td>Bogotá</td>
+                            <td>Medellin</td>
+                            <td>En ruta</td>
+                            <td>Marvin Solano</td>
+                            <td>Antonio Pérez</td>
+                            <td> <a
+                                name=""
+                                id=""
+                                class="btn btn-primary"
+                                href="{% url 'update_shipment' %}"
+                                role="button"
+                                >Editar</a
+                            >
+                              <a
+                                name=""
+                                id=""
+                                class="btn btn-danger"
+                                href="{% url 'delete_shipment' %}"
+                                role="button"
+                                >Eliminar</a
+                             >
+                              </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a
+                name=""
+                id=""
+                class="btn btn-success"
+                href="{% url 'create_shipment' %}"
+                role="button"
+                >Crear nuevo envio</a
+            >
+            
+        </div>
+    </div>
+    
+    
+{% endblock %} 
