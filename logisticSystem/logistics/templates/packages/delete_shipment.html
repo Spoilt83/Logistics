@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Eliminar envio {% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-header">Eliminar información de envio</div>
+        <div class="card-body">
+            <h4 class="card-title">Datos del envio</h4>
+
+            {% include 'packages/form.html' %}
+
+        </div>
+        <div class="card-footer text-muted"></div>
+    </div>
+
+{% endblock %}

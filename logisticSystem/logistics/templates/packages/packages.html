@@ -12,7 +12,7 @@
                 class="table-responsive"
             >
                 <table
-                    class="table table-primary"
+                    class="table table-primary table-bordered table-hover "
                 >
                     <thead>
                         <tr>
@@ -35,11 +35,35 @@
                             <td>En ruta</td>
                             <td>Marvin Solano</td>
                             <td>Antonio Pérez</td>
-                            <td>Edit | Delete</td>
+                            <td> <a
+                                name=""
+                                id=""
+                                class="btn btn-primary"
+                                href="{% url 'update_shipment' %}"
+                                role="button"
+                                >Editar</a
+                            >
+                              <a
+                                name=""
+                                id=""
+                                class="btn btn-danger"
+                                href="{% url 'delete_shipment' %}"
+                                role="button"
+                                >Eliminar</a
+                             >
+                              </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <a
+                name=""
+                id=""
+                class="btn btn-success"
+                href="{% url 'create_shipment' %}"
+                role="button"
+                >Crear nuevo envio</a
+            >
             
         </div>
     </div>
