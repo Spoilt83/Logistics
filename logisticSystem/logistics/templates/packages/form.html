@@ -1,10 +1,11 @@
 <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
+
     {% for field in form %}
-        <div class="mb-3">
-            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+        <div class="mb-3 col-12">
+            <label for="{{ field.id_for_label }}" class="form-label col-3">{{ field.label }}</label>
             {{ field }}
-            <div id="helpId" class="form-text">{{ field.help_text }}</div>
+            <div id="helpId" class="form-text col-9">{{ field.help_text }}</div>
         </div>
         <div class="col-12 help_text">{{ field.errors }}</div>
     {% endfor %}
@@ -16,21 +17,5 @@
             type="submit"
             value="Enviar formulario"
         />
-        
-    
 
 </form>
-
-
-    <!-- <div class="mb-3">
-        <label for="" class="form-label">Nombre:</label>
-        <input
-            type="text"
-            class="form-control"
-            name=""
-            id=""
-            aria-describedby="helpId"
-            placeholder="Nombre del usuario"
-        />
-        
-    </div> -->
