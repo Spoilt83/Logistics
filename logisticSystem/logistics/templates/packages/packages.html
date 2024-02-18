@@ -27,14 +27,15 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for package in packages %}
                         <tr class="">
-                            <td scope="row">1.5 gr</td>
-                            <td>10cm x 5cm x 8cm </td>
-                            <td>Bogotá</td>
-                            <td>Medellin</td>
-                            <td>En ruta</td>
-                            <td>Marvin Solano</td>
-                            <td>Antonio Pérez</td>
+                            <td scope="row">{{ package.weight }}</td>
+                            <td>{{ package.dimensions }}</td>
+                            <td>{{ package.origin }}</td>
+                            <td>{{ package.destination }}</td>
+                            <td>{{ package.status }}</td>
+                            <td>{{ package.client.name }}</td>
+                            <td>{{ package.transportist.name }}</td>
                             <td> <a
                                 name=""
                                 id=""
@@ -53,6 +54,7 @@
                              >
                               </td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
