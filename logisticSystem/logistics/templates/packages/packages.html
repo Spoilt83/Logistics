@@ -27,19 +27,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for package in packages %}
                         <tr class="">
-                            <td scope="row">1.5 gr</td>
-                            <td>10cm x 5cm x 8cm </td>
-                            <td>Bogotá</td>
-                            <td>Medellin</td>
-                            <td>En ruta</td>
-                            <td>Marvin Solano</td>
-                            <td>Antonio Pérez</td>
+                            <td scope="row">{{ package.weight }}</td>
+                            <td>{{ package.dimensions }}</td>
+                            <td>{{ package.origin }}</td>
+                            <td>{{ package.destination }}</td>
+                            <td>{{ package.status }}</td>
+                            <td>{{ package.client.name }}</td>
+                            <td>{{ package.transportist.name }}</td>
                             <td> <a
                                 name=""
                                 id=""
                                 class="btn btn-primary"
-                                href="{% url 'update_shipment' %}"
+                                href="{% url 'update_shipment' package.id %}"
                                 role="button"
                                 >Editar</a
                             >
@@ -47,12 +48,13 @@
                                 name=""
                                 id=""
                                 class="btn btn-danger"
-                                href="{% url 'delete_shipment' %}"
+                                href="{% url 'delete_shipment' package.id %}"
                                 role="button"
                                 >Eliminar</a
                              >
                               </td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

@@ -1,7 +1,53 @@
+
 {% extends 'base.html' %}
 
-{% block title %} Paquetes asignados {% endblock %}
+{% block title %} Paquetes asignados a un transportista {% endblock %}
 
 {% block content %}
-    <h1>Paquetes asignados a un transportista</h1>
+    <!-- Hover added -->
+    <div class="card">
+        <div class="card-header">Listar paquetes por Transportista</div>
+        <div class="card-body">
+            <h4 class="card-title">Paquetes</h4>
+            <div
+                class="table-responsive"
+            >
+                <table
+                    class="table table-primary table-bordered table-hover "
+                >
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Tipo de Vehiculo</th>
+                            <th scope="col">Numero de contacto</th>
+                            <th scope="col">Peso</th>
+                            <th scope="col">Dimensiones</th>
+                            <th scope="col">Origen</th>
+                            <th scope="col">Destino</th>
+                            <th scope="col">Estado de Entrega</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for package in packages %}
+                        <tr class="">
+                            <td scope="row">{{ package.transportist.name }}</td>
+                            <td>{{ package.transportist.last_name }}</td>
+                            <td>{{ package.transportist.vihicle_type }}</td>
+                            <td>{{ package.transportist.contact_number }}</td>
+                            <td>{{ package.weight }}</td>
+                            <td>{{ package.dimensions }}</td>
+                            <td>{{ package.origin }}</td>
+                            <td>{{ package.destination }}</td>
+                            <td>{{ package.status }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+    
+    
 {% endblock %} 
